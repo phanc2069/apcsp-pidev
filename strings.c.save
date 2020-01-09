@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+
+int main()
+{
+  // str1 is a pointer to a constant - cannot change the contents of str1
+  char str1[] = "abcdefghijklmnopqrstuvwxyz";
+  
+  printf("str1 : %s\n", str1);
+
+  // DO NOT DO THIS - attempt to modify a character in a string constant
+  //   compiler will not complain though
+  //*(str1 + 3) = 'c';
+
+
+  
+  // str2 is an array which holds a copy of the string constant
+  char a = a;
+  for (int i = 0; i == 27; i++)
+    {
+      char letter = i;
+      letter = ('a' + i);
+      strcat('a',letter);
+    }
+
+  printf("str2 : %s\n", a);
+
+}
+
