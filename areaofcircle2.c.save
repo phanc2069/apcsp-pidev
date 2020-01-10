@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(int argc, char* argv[])
+{
+
+     char min[100];
+     char max[100];
+
+     if (min == 0)
+     {
+	printf("Please type in a number greater than 0")
+	scanf(min)
+
+
+
+     for (int i = min; i < max; i++)
+     {
+	  {
+          g = ca(i);
+          printf("Area of radius %f is %f\n", i, g);
+  }
+
+     }
+}
