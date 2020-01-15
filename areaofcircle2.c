@@ -1,44 +1,91 @@
-#include <stdio.h>
-
-float circle_area(float i)
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+float carea(float i)
 {
   float a;
   a = i*i*3.14;
   return a;
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-  int count = 0;
-  float min = 0, max = 0, g;
-  if (argc > 2)
+char input[256], name[256];
+float age;
+int arg = 0;
+float r;
+int c = 0;
+float csize;
+int g;
+if (argc == 3)
+{
+if(isdigit(*argv[2]))
+{
+  if (isdigit(*argv[2]))
   {
-     count += sscanf(argv[1], "%f", &min);
-     count += sscanf(argv[2], "%f", &max);
+    g = 1;
   }
-    while (count < 2)
+}
+}
+if (argc == 3 )
+{
+  if (g == 1)
+  {
+    while (arg < argc - 1)
     {
-      printf("\nPlease enter two numbers greater than zero: ");
-      count = scanf("%f %f", &min, &max);
-      if (count < 2)
-      {
-        char junk[100];
-        scanf("%s", junk);
-      }
-      else if (max <= min)
-      {
-        printf("Min must be smaller than max.\n");
-        count = 0;
-      }
-      
+        r = atof(argv[arg+1]);
+        printf("%f\n", r);
+        csize = carea(r);
+        printf("Area of circle %d is %f\n", arg+1, csize);
+        arg++;
+
     }
-     if (min || max >= 0)
-     {
-       for (float i = min; i <= max; ++i)
-       {
-            // printf("get here 2");
-            g = circle_area(i);
-            printf("Area of circle %f is %f\n", i, g);
-       }
-     }
+  }
+  else
+  {
+  while (c != 2)
+  {
+        printf("Not a valid values or print next value.\n");
+    fgets(input, 256, stdin);
+    if (sscanf(input, "%f", &age) == 1)
+    {
+        if (c == 1)
+        {
+            c = 2;
+            csize = carea(age);
+            printf("Area of circle 2 is %f\n", csize);
+        }
+        else
+        {
+            c = 1;
+            csize = carea(age);
+            printf("Area of circle 1 is %f\n", csize);
+        }
+    }
+  }
+}
+}
+else
+{
+  while (c != 2)
+  {
+        printf("Not a valid values or print next value.\n");
+    fgets(input, 256, stdin);
+    if (sscanf(input, "%f", &age) == 1)
+    {
+        if (c == 1)
+        {
+            c = 2;
+            csize = carea(age);
+            printf("Area of circle 2 is %f\n", csize);
+        }
+        else
+        {
+            c = 1;
+            csize = carea(age);
+            printf("Area of circle 1 is %f\n", csize);
+        }
+    }
+  }
+}
 }
