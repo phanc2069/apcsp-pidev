@@ -54,6 +54,7 @@ int main (int argc, char *argv[]) {
               coef=coef*(i-j+1)/j;
           }
         }
+      coef = abs(coef);  
       printf("\nIn row %d, the value you seek is %d.", rows, coef);
       printf("\n");
      }
